@@ -6,15 +6,22 @@
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 970px;
+  box-sizing: border-box;
+  margin: 0, auto;
+  padding: 0;
 }
 
 .row {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .col1-6 {
-  width: 100% * 100 /60;
+  width: 30/100;
 }
 
 img {
@@ -22,3 +29,17 @@ img {
 }
 
 /* /RESET */
+
+/* START WORK */
+
+header {
+  background-image: url("../img/wall.png");
+}
+
+.container {
+  background-image: url("../img/cork.png");
+}
+
+#img-card {
+  width: 80px;
+}
