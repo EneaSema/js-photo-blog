@@ -40,6 +40,29 @@ header {
   background-image: url("../img/cork.png");
 }
 
+.card {
+  margin: 16px;
+}
+
+#card-container {
+  background-color: white;
+  border: 5px solid white;
+  position: relative;
+  padding: 30px;
+}
+
+#point-attack {
+  width: 30px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
 #img-card {
-  width: 80px;
+  width: 300px;
+  height: 300px;
+}
+
+.info-card {
+  margin-top: 8px;
 }
