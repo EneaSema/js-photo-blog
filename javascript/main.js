@@ -13,37 +13,30 @@ console.log(apiExercise);
 
 // mi creo un array vuoto che andrò a riempire attraverso un ciclo for
 
-let currentArray = [];
-console.log(currentArray);
+axios.get(apiExercise).then((response) => {
+  console.log(response.data);
 
-// for (let i = 0; i < 6; i++) {
-//   axios.get(apiExercise).then((response) => {
-//     console.log(response);
-//   });
-//   currentArray.push(response.data);
-
-//   if (currentArray.length === response.length) {
-//   }
-// }
+  for (let i = 0; i < response.data.length; i++) {
+    elementCol16.innerHTML += `<div class="col1-6">
+            <div class="card">
+              <div class="card-container">
+                <img class="point-attack" src="./img/pin.svg" alt="" />
+                <img
+                  class="img-card"
+                  src="${response.data[i].url}"
+                  alt="${response.data[i].title}"
+                />
+                <div class="info-card">
+                  <h3 class="name-card">${response.data[i].title}</h3>
+                  <p class="data-card">${response.data[i].date}</p>
+                </div>
+              </div>
+            </div>
+          </div>`;
+  }
+});
 
 // mi serve recuperare la sezione della colonna per riprodurla
 
 const elementCol16 = document.querySelector(".row");
 console.log(elementCol16);
-
-elementCol16.innerHTML = `<div class="col1-6">
-            <div class="card">
-              <div id="card-container">
-                <img id="point-attack" src="./img/pin.svg" alt="" />
-                <img
-                  id="img-card"
-                  src="https://marcolanci.it/boolean/assets/pictures/1.png"
-                  alt="foto-ricordo"
-                />
-                <div class="info-card">
-                  <h3 id="name-card">ciao</h3>
-                  <p id="info-card">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-            </div>
-          </div>`;

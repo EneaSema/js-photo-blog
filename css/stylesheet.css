@@ -8,7 +8,7 @@
 .container {
   max-width: 970px;
   box-sizing: border-box;
-  margin: 0, auto;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -17,11 +17,10 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
 }
 
 .col1-6 {
-  width: 30/100;
+  width: calc(100% / 3);
 }
 
 img {
@@ -48,23 +47,22 @@ main {
   margin: 16px;
 }
 
-#card-container {
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
   background-color: white;
-  border: 5px solid white;
+  border: 0px solid white;
   position: relative;
-  padding: 30px;
+  padding: 25px;
 }
 
-#point-attack {
+.point-attack {
   width: 30px;
   position: absolute;
   top: 0;
   left: 50%;
-}
-
-#img-card {
-  width: 300px;
-  height: 300px;
 }
 
 .info-card {
