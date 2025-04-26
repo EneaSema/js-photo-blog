@@ -91,6 +91,9 @@ main {
   .col1-6 {
     width: 100%;
   }
+  img {
+    width: 100%;
+  }
 }
 
 /* INIZIO MEDIA QUERY TABLET */
@@ -114,5 +117,35 @@ main {
 
   .col1-6 {
     width: calc(100% / 2);
+  }
+  img {
+    width: 100%;
+  }
+}
+
+/* INIZIO MEDIA QUERY PC */
+
+@media screen and (min-width: 1000px) {
+  /* container-left */
+
+  .container {
+    max-width: 780px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .col1-6 {
+    width: calc(100% / 3);
+  }
+  img {
+    width: 100%;
   }
 }
