@@ -68,3 +68,51 @@ main {
 .info-card {
   margin-top: 8px;
 }
+
+/* INIZIO MEDIA QUERY MOBILE */
+
+@media screen and (min-width: 507px) {
+  /* container-left */
+
+  .container {
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .col1-6 {
+    width: 100%;
+  }
+}
+
+/* INIZIO MEDIA QUERY TABLET */
+
+@media screen and (min-width: 790px) {
+  /* container-left */
+
+  .container {
+    max-width: 700px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .col1-6 {
+    width: calc(100% / 2);
+  }
+}
