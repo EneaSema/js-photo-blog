@@ -41,24 +41,50 @@ axios.get(apiExercise).then((response) => {
 const elementCol16 = document.querySelector(".row");
 console.log(elementCol16);
 
-const elementOverlay = document.querySelector(".overlay");
-console.log(elementOverlay);
-
+// mi serve recuperare la parte della card
 const elementCard = document.querySelector(".card");
 console.log(elementCard);
 
-const elementBtnOverlay = document.querySelector(".btn-overlay");
+// OVERLAY
+
+// mi serve recuperare la parte del OVERLAY
+const elementOverlay = document.querySelector(".overlay");
+console.log(elementOverlay);
+
+// mi serve recuperare la parte del BOTTONE del OVERLAY
+const elementBtnOverlay = document.getElementById("btn-overlay");
 console.log(elementBtnOverlay);
 
-if (elementOverlay == true) {
+// mi credo una variabile BOOLEANA per VERFICARE lo stato del OVERLAY
+// dove indico che quest'ultimo INIZIA come SPENTO
+let overlayOff = false;
+console.log(overlayOff);
+
+// SCRIVO IF dove VERIFICO lo STATO della VARIABILE BOOLEANA CREATA
+// SE OVERLAY è OFF, NON è ATTIVO
+if (overlayOff == false) {
+  // CREO EVENTO PER CLICK BTN OVERLAY
   elementBtnOverlay.addEventListener("click", function () {
+    // TOLGO DISPLAY:FLEX ED AGGIUNGO DISPLAY:NONE
     elementOverlay.classList.remove("display:flex");
     elementOverlay.classList.add("display:none");
   });
-} else {
-  elementCard.addEventListener("click", function () {
+  //CAMBIO IL VALORE DELLA VARIABILE DA FALSE(0/SPENTO) A TRUE(1/ATTIVO)
+  console.log(elementOverlay);
+  overlayOff = true;
+  console.log(overlayOff);
+}
+// ALTRIMENTI SE OVERLAY è ON, è ATTIVO
+else {
+  elementBtnOverlay.addEventListener("click", function () {
+    // TOLGO DISPLAY:NONE ED AGGIUNGO DISPLAY:FLEX
     elementOverlay.classList.remove("display:none");
     elementOverlay.classList.add("display:flex");
-    elementOverlay == true;
+    console.log(elementOverlay);
   });
+  console.log(elementOverlay);
+  //CAMBIO IL VALORE DELLA VARIABILE DA TRUE(1/ATTIVO) A FALSE(0/SPENTO)
+  overlayOff = false;
+  console.log(overlayOff);
 }
+console.log(elementOverlay);
