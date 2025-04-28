@@ -18,7 +18,7 @@ axios.get(apiExercise).then((response) => {
 
   for (let i = 0; i < response.data.length; i++) {
     elementCol16.innerHTML += `<div class="col1-6">
-            <div class="card">
+            <div class="card" id="${response.data[i].id}">
               <div class="card-container">
                 <img class="point-attack" src="./img/pin.svg" alt="" />
                 <img
@@ -40,3 +40,25 @@ axios.get(apiExercise).then((response) => {
 
 const elementCol16 = document.querySelector(".row");
 console.log(elementCol16);
+
+const elementOverlay = document.querySelector(".overlay");
+console.log(elementOverlay);
+
+const elementCard = document.querySelector(".card");
+console.log(elementCard);
+
+const elementBtnOverlay = document.querySelector(".btn-overlay");
+console.log(elementBtnOverlay);
+
+if (elementOverlay == true) {
+  elementBtnOverlay.addEventListener("click", function () {
+    elementOverlay.classList.remove("display:flex");
+    elementOverlay.classList.add("display:none");
+  });
+} else {
+  elementCard.addEventListener("click", function () {
+    elementOverlay.classList.remove("display:none");
+    elementOverlay.classList.add("display:flex");
+    elementOverlay == true;
+  });
+}
