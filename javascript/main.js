@@ -18,7 +18,7 @@ axios.get(apiExercise).then((response) => {
 
   for (let i = 0; i < response.data.length; i++) {
     elementCol16.innerHTML += `<div class="col1-6">
-            <div class="card" id="${response.data[i].id}">
+            <div class="card" id="card-${response.data[i].id}">
               <div class="card-container">
                 <img class="point-attack" src="./img/pin.svg" alt="" />
                 <img
@@ -34,16 +34,27 @@ axios.get(apiExercise).then((response) => {
             </div>
           </div>`;
   }
+  // mi serve recuperare la parte delle card una volta finito il ciclo FOR
+  let elementCard = document.querySelectorAll(".card");
+  console.log(elementCard);
+
+  // Faccio CICLO FOR per CREARE EVENTO PER CLICK IMG SELEZIONATA
+  for (let i = 0; i < elementCard.length; i++) {
+    elementCard[i].addEventListener("click", function () {
+      elementOverlay.classList.remove("off");
+      console.log(elementCard[i].id);
+      const originalImgSrc = document.querySelector(
+        `#${elementCard[i].id} .img-card`
+      ).src;
+      document.querySelector(".card-overlay-img img").src = originalImgSrc;
+    });
+  }
 });
 
 // mi serve recuperare la sezione della colonna per riprodurla
 
 const elementCol16 = document.querySelector(".row");
 console.log(elementCol16);
-
-// mi serve recuperare la parte della card
-const elementCard = document.querySelector(".card");
-console.log(elementCard);
 
 // OVERLAY
 
@@ -55,17 +66,9 @@ console.log(elementOverlay);
 const elementBtnOverlay = document.getElementById("btn-overlay");
 console.log(elementBtnOverlay);
 
-// mi credo una variabile BOOLEANA per VERFICARE lo stato del OVERLAY
-// dove indico che quest'ultimo INIZIA come SPENTO
-let overlayOff = true;
-console.log(overlayOff);
-
 // CREO EVENTO PER CLICK BTN OVERLAY
 elementBtnOverlay.addEventListener("click", function () {
-  if (overlayOff === true) {
-    elementOverlay.classList.add("off");
-    overlayOff = false;
-  }
+  elementOverlay.classList.add("off");
 });
 
 // SCRIVO IF dove VERIFICO lo STATO della VARIABILE BOOLEANA CREATA
