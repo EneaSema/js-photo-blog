@@ -11,7 +11,7 @@ console.log(apiExercise);
 
 // ottengono un array di oggetti
 
-// mi creo un array vuoto che andrò a riempire attraverso un ciclo for
+// mi creo un ciclo for
 
 axios.get(apiExercise).then((response) => {
   console.log(response.data);
@@ -27,8 +27,8 @@ axios.get(apiExercise).then((response) => {
                   alt="${response.data[i].title}"
                 />
                 <div class="info-card">
-                  <h3 class="name-card">${response.data[i].title}</h3>
-                  <p class="data-card">${response.data[i].date}</p>
+                  <h3 class="data-card">${response.data[i].date}</h3>
+                  <h3 class="name-card">${response.data[i].title}</h3>                  
                 </div>
               </div>
             </div>
@@ -70,47 +70,3 @@ console.log(elementBtnOverlay);
 elementBtnOverlay.addEventListener("click", function () {
   elementOverlay.classList.add("off");
 });
-
-// SCRIVO IF dove VERIFICO lo STATO della VARIABILE BOOLEANA CREATA
-// SE OVERLAY è OFF, NON è ATTIVO
-// if (overlayOff == false) {
-// CREO EVENTO PER CLICK BTN OVERLAY
-// elementBtnOverlay.addEventListener("click", function () {
-//   // TOLGO DISPLAY:FLEX ED AGGIUNGO DISPLAY:NONE
-//   elementOverlay.classList.add("off");
-
-//   if (overlayOff == false) {
-//     overlayOff = true;
-//     console.log("Mostro overlay");
-//   } else {
-//     overlayOff = false;
-//     console.log("Nascondo overlay");
-//   }
-// });
-
-//CAMBIO IL VALORE DELLA VARIABILE DA FALSE(0/SPENTO) A TRUE(1/ATTIVO)
-// console.log(elementOverlay);
-// overlayOff = true;
-// console.log(overlayOff);
-
-// }
-// ALTRIMENTI SE OVERLAY è ON, è ATTIVO
-// else {
-//   elementBtnOverlay.addEventListener("click", function () {
-//     // TOLGO DISPLAY:NONE ED AGGIUNGO DISPLAY:FLEX
-//     elementOverlay.classList.remove("display:none");
-//     elementOverlay.classList.add("display:flex");
-//     console.log(elementOverlay);
-//   });
-//   console.log(elementOverlay);
-//   //CAMBIO IL VALORE DELLA VARIABILE DA TRUE(1/ATTIVO) A FALSE(0/SPENTO)
-//   overlayOff = false;
-//   console.log(overlayOff);
-// }
-// console.log(elementOverlay);
-
-// click
-// if overlayOff === false
-// remove flex
-// add none
-// else
