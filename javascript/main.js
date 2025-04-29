@@ -38,19 +38,22 @@ axios.get(apiExercise).then((response) => {
   let elementCard = document.querySelectorAll(".card");
   console.log(elementCard);
 
-  // Faccio CICLO FOR per CREARE EVENTO PER CLICK IMG SELEZIONATA
+  // Faccio CICLO FOR per CREARE EVENTO PER PASSAGGIO IMG SELEZIONATA
   for (let i = 0; i < elementCard.length; i++) {
+    elementCard[i].addEventListener("mouseover", function () {
+      elementCard[i].style.transform = `scale(0.5)`;
+      elementCard[i].style.transform = `rotate(10deg)`;
+    });
+
     elementCard[i].addEventListener("click", function () {
       elementOverlay.classList.remove("off");
       console.log(elementCard[i].id);
       const originalImgSrc = document.querySelector(
         `#${elementCard[i].id} .img-card`
       ).src;
-      const reproducedImgOverlay = (document.querySelector(
-        ".card-overlay-img img"
-      ).src = originalImgSrc);
-      console.log(reproducedImgOverlay);
-      // reproducedImgOverlay.style.transform = `rotate(10deg);`;
+      console.log(originalImgSrc);
+      document.querySelector(".card-overlay-img .img-overlay").src =
+        originalImgSrc;
     });
   }
 });
@@ -69,6 +72,10 @@ console.log(elementOverlay);
 // mi serve recuperare la parte del BOTTONE del OVERLAY
 const elementBtnOverlay = document.getElementById("btn-overlay");
 console.log(elementBtnOverlay);
+
+// mi serve recuperare la parte IMG del OVERLAY
+const elementImgOverlay = document.getElementById("img-overlay");
+console.log(elementImgOverlay);
 
 // CREO EVENTO PER CLICK BTN OVERLAY
 elementBtnOverlay.addEventListener("click", function () {

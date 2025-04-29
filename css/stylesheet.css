@@ -102,6 +102,10 @@ main {
   width: 100px;
 }
 
+.img-overlay {
+  transform: rotate(10deg);
+}
+
 /* INIZIO MEDIA QUERY MOBILE */
 
 @media screen and (min-width: 507px) {
