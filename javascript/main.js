@@ -46,7 +46,11 @@ axios.get(apiExercise).then((response) => {
       const originalImgSrc = document.querySelector(
         `#${elementCard[i].id} .img-card`
       ).src;
-      document.querySelector(".card-overlay-img img").src = originalImgSrc;
+      const reproducedImgOverlay = (document.querySelector(
+        ".card-overlay-img img"
+      ).src = originalImgSrc);
+      console.log(reproducedImgOverlay);
+      // reproducedImgOverlay.style.transform = `rotate(10deg);`;
     });
   }
 });
